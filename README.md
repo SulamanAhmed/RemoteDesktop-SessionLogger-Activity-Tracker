@@ -1,27 +1,59 @@
 # RemoteDesktop-SessionLogger-Activity-Tracker
-PowerShell script for monitoring user login/logout activities and working hours in Windows 10/11, particularly focused on Remote Desktop session tracking. It captures and logs session details, providing insights into user activity patterns for system administrators and IT professionals. Ideal for auditing and security monitoring purposes.
+
+This repository contains a PowerShell script for monitoring user login/logout activities in Windows 10/11, focusing on Remote Desktop sessions, and a Python script to calculate and analyze working hours from the exported activity logs.
+
 ## Features
 
-- Tracks user login and logout times.
-- Focuses on Remote Desktop sessions.
+- Tracks user login and logout times, focusing on Remote Desktop sessions.
 - Exports the activity logs to a CSV file for easy analysis.
+- Calculates total working hours for users from the activity logs.
+- Ideal for auditing, security monitoring, and analyzing user activity patterns.
 
-## Getting Started
-
-These instructions will help you set up and run the script on your local machine for development and testing purposes.
-
-### Prerequisites
+## Prerequisites
 
 - Windows 10/11 operating system.
-- PowerShell 5.0 or higher.
+- PowerShell 5.0 or higher for running the PowerShell script.
+- Python 3.x with Pandas library for running the Python script.
 
-### Installation
+## Installation
 
-No additional installation is required. Just clone the repository or download the script file to your local machine.
+1. **PowerShell Script**:
+   - No additional installation is required for the PowerShell script. 
+   - Clone the repository or download the `UserActivityTracking.ps1` script file to your local machine.
 
-### Usage
+2. **Python Script**:
+   - Ensure Python is installed on your system. Download and install Python from [python.org](https://www.python.org/downloads/).
+   - Install Pandas using pip:
+     ```bash
+     pip install pandas
+     ```
 
-To run the script, navigate to the script's directory in PowerShell and enter:
+## Usage
 
-```powershell
-.\UserActivityTracking.ps1 -dateParam 'YYYY-MM-DD'
+### Running the PowerShell Script
+
+To track user activity:
+
+1. Navigate to the script's directory in PowerShell.
+2. Run the script with the following command:
+   ```powershell
+   .\UserActivityTracking.ps1 -dateParam 'YYYY-MM-DD'
+Replace YYYY-MM-DD with the target date for tracking.
+
+# Running the Python Script
+To calculate working hours from the generated CSV:
+
+Ensure the CSV file is in the same directory as the Python script or update the filename variable in the script to point to the CSV file's location.
+```bash
+python user_activity_hours_calculator.py
+```
+
+# Output
+- The PowerShell script will generate a CSV file with detailed user activity logs.
+- The Python script will output the total working hours for each user and save a summary CSV and a log file to the specified directory.
+  
+# Contributing
+  Contributions are welcome. Feel free to fork the repository and submit pull requests to improve the scripts.
+
+# License
+  This project is licensed under the MIT License - see the LICENSE file for details.
